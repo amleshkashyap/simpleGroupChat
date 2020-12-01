@@ -1,0 +1,25 @@
+{
+  "name": "group_chat_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "await-to-js": "^2.1.1",
+    "dotenv": "^8.0.0",
+    "graphql": "^14.1.1",
+    "graphql-subscriptions": "^1.0.0",
+    "graphql-yoga": "^1.18.3",
+    "mongoose": "^5.4.12",
+    "subscriptions-transport-ws": "^0.9.15"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

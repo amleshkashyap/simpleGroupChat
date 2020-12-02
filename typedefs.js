@@ -50,11 +50,14 @@ const typeDefs = `
     }
 
     type Mutation {
+	newUser(email: String! password: String! name: String!): User
+	userLogin(email: String! password: String!): User
 	newChat(sender_id: String! sender_email: String! sender_name: String! chat_text: String! group_id: String! sent_at: Float!): Chat!
     }
 
     type Subscription {
-	newChat (group_id: [ String! ]!): Chat!
+	userLogin (email: String!): String
+	newChat (group_id: [ String! ]! sender_email: String): Chat!
     }
 `;
 

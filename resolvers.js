@@ -78,6 +78,7 @@ const resolvers = {
 	    _, 
 	    { sender_id, sender_email, sender_name, chat_text, group_id, sent_at } 
 	    ) => {
+
 	    const chat = new ChatModel({
 		group_id: mongoose.Types.ObjectId(group_id),
 		sent_at: sent_at,
@@ -93,7 +94,7 @@ const resolvers = {
 	    const [error, result] = await to(chat.save());
 
 	    if(error || !result) {
-		return "Something went wrong";
+		return null;
 	    }
 
 	    pubsub.publish("newChat", {
